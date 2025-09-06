@@ -1,11 +1,6 @@
+# Caching headers for docs and audio
 /docs/*
   Cache-Control: public, max-age=604800, immutable
-  
-/images/*
-  Cache-Control: public, max-age=2592000, immutable
 
-/*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; media-src 'self' https:; object-src 'none'; frame-src 'self' https:;
+/audio/*
+  Cache-Control: public, max-age=604800, immutable
