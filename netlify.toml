@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  # base = "wtp-app"   # uncomment+set only if your app lives in a subfolder
 
 # SPA fallback for Vite
 [[redirects]]
