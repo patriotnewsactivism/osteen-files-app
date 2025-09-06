@@ -1,0 +1,5 @@
+/docs/*
+  Cache-Control: public, max-age=604800, immutable
+
+/audio/*
+  Cache-Control: public, max-age=604800, immutable
