@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "dist"         # Ã¢â€ Â not "build"
-  # base = "wtp-app"       # Ã¢â€ Â only if your app lives in a subfolder
-t", ".next", etc., depending on framework
+  publish = "dist"
+  # base = "wtp-app"   # uncomment+set only if your app lives in a subfolder
 
+# SPA fallback for Vite
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
