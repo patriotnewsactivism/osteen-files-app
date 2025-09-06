@@ -1,6 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { albumInfo as badActors } from "../data/badActors";
+import { Helmet } from "react-helmet-async";
+
+<Helmet>
+  <title>Evidence | Osteen Case</title>
+  <meta name="description" content="Browse the Osteen case filings, transcripts, and videos." />
+  <meta property="og:title" content="Evidence | Osteen Case" />
+  <meta property="og:description" content="Browse the Osteen case filings, transcripts, and videos." />
+  <meta property="og:image" content="/images/social-card-evidence.jpg" />
+  <link rel="canonical" href="https://osteen.wtpnews.org/evidence" />
+</Helmet>
 
 /**
  * A simple hub listing all music releases. As more albums are added, push

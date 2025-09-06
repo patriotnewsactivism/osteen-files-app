@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import WaveformVisualizer from "@/components/WaveformVisualizer";
 import { badActorsTracks } from "@/data/badActors";
+import { Helmet } from "react-helmet-async";
+
+<Helmet>
+  <title>Evidence | Osteen Case</title>
+  <meta name="description" content="Browse the Osteen case filings, transcripts, and videos." />
+  <meta property="og:title" content="Evidence | Osteen Case" />
+  <meta property="og:description" content="Browse the Osteen case filings, transcripts, and videos." />
+  <meta property="og:image" content="/images/social-card-evidence.jpg" />
+  <link rel="canonical" href="https://osteen.wtpnews.org/evidence" />
+</Helmet>
 
 export default function AlbumComparison() {
   const [selectedTrack1, setSelectedTrack1] = useState(badActorsTracks[0]);
