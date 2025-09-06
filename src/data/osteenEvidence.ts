@@ -8,10 +8,10 @@ export type EvidenceItem = {
   highlights: string[];
   citationTags: string[];
   relatedIds?: string[];
-  keywords: string[]; // for search functionality
-  jurisdiction: string; // for filtering
-  significance: "high" | "medium" | "low"; // for prioritization
-  summary: string; // detailed summary for search
+  keywords: string[];
+  jurisdiction: string;
+  significance: "high" | "medium" | "low";
+  summary: string;
 };
 
 export const osteenEvidence: EvidenceItem[] = [
@@ -47,7 +47,7 @@ export const osteenEvidence: EvidenceItem[] = [
     title: "Transcript – Revocation Hearing (Lafayette Co., MS)",
     date: "2024-07-18",
     kind: "Transcript",
-    docPath: "/docs/07-18-24-Reardon.pdf",
+    docPath: "/docs/07.18.24Reardon.pdf",
     highlights: [
       "Court describes status as unsupervised probation and overrules 47-7-37 objection.",
       "Defense notes petition inconsistencies (post-release vs. unsupervised).",
@@ -63,9 +63,9 @@ export const osteenEvidence: EvidenceItem[] = [
   {
     id: "sdtix-complaint",
     title: "Civil Rights Complaint – Reardon v. Osteen et al. (TXSD)",
-    date: "2025-05-27",
+    date: "2025-05-22",
     kind: "Court Filing",
-    docPath: "/docs/SDTX-3-25-cv-00159-Complaint.pdf",
+    docPath: "/docs/Galveston Complaint-5-22-25.pdf",
     highlights: [
       "Alleges perjury in blood-draw warrant and suppression under Franks/Wong Sun.",
       "Asserts coordinated, interstate scheme and First/Fourth/Fourteenth violations.",
@@ -83,7 +83,7 @@ export const osteenEvidence: EvidenceItem[] = [
     title: "Motion for Post-Conviction Relief (Mississippi)",
     date: "2024-11-26",
     kind: "Court Filing", 
-    docPath: "/docs/2024-11-26-Motion-for-PCR.pdf",
+    docPath: "/docs/002 11-26-24 Motion for Post-Conviction Relief.pdf",
     highlights: [
       "Argues any Texas DUI would be a misdemeanor → 'technical violation'.",
       "Second technical revocation capped at 120 days; requests vacatur/re-sentencing.",
@@ -97,41 +97,40 @@ export const osteenEvidence: EvidenceItem[] = [
     summary: "Motion for post-conviction relief arguing that any Texas DUI charge would constitute only a misdemeanor and therefore a 'technical violation' under Mississippi law, limiting sentence to 120 days for second technical revocation."
   },
   {
-    id: "franks-motion",
-    title: "Motion for a Franks Hearing (TX DWI Case)",
+    id: "galveston-discovery",
+    title: "Galveston Discovery Documents", 
     date: "2023-2024",
     kind: "Court Filing",
-    docPath: "/docs/Motion-for-Franks-Hearing.pdf", 
+    docPath: "/docs/Galveston discovery for AI.pdf",
     highlights: [
-      "Challenges Osteen's warrant affidavit as containing knowingly false statements.",
-      "Invokes Franks v. Delaware, requiring suppression where perjury taints the warrant.",
-      "Contradictions noted between affidavit claims and toxicology/body-cam evidence."
+      "Discovery materials from Galveston DWI case including evidence requests.",
+      "Documents procedural timeline and evidence collection methods.",
+      "Shows coordination between agencies and evidence handling procedures."
     ],
-    citationTags: ["Franks Motion", "Warrant Challenge", "Perjury"],
+    citationTags: ["Discovery", "Evidence Collection"],
     relatedIds: ["bwc-timeline", "sdtix-complaint"],
-    keywords: ["Franks", "warrant", "perjury", "false statements", "suppression", "toxicology", "affidavit"],
-    jurisdiction: "Texas - Galveston County", 
-    significance: "high",
-    summary: "Motion under Franks v. Delaware challenging the warrant affidavit for blood draw, alleging Officer Osteen made knowingly false statements. Seeks suppression of evidence obtained through perjured warrant, with contradictions between sworn affidavit and body camera footage."
+    keywords: ["discovery", "evidence", "Galveston", "DWI", "procedure", "collection"],
+    jurisdiction: "Texas - Galveston County",
+    significance: "medium",
+    summary: "Discovery documentation from the Galveston DWI case showing evidence collection procedures, agency coordination, and procedural timeline."
   },
   {
-    id: "galveston-dwi-packet",
-    title: "Compiled Galveston DWI Documents",
-    date: "2023-08 – 2024-06",
-    kind: "Court Filing",
-    docPath: "/docs/Galveston-DWI-Documents.pdf",
+    id: "investigation-files",
+    title: "Reardon Investigation Files",
+    date: "2023-2024", 
+    kind: "Summary",
+    docPath: "/docs/Reardon Investigation Files.docx",
     highlights: [
-      "Petition to Revoke (Aug 17, 2023) cites a Galveston 'felony DUI' charge.",
-      "Bench warrant and revocation order inconsistently reference probation bases.", 
-      "Governor Tate Reeves' rendition request labels Reardon a 'fugitive'.",
-      "Galveston County booking reports log arrests, charges, and detainers."
+      "Comprehensive investigation summary and case file compilation.",
+      "Timeline of events and key evidence documentation.",
+      "Analysis of procedural irregularities and constitutional issues."
     ],
-    citationTags: ["DWI Documents", "Interstate Coordination"],
-    relatedIds: ["ms-revocation-hearing", "franks-motion", "sdtix-complaint"],
-    keywords: ["DWI", "felony", "petition", "revoke", "fugitive", "Tate Reeves", "rendition", "booking", "detainer"],
-    jurisdiction: "Texas - Galveston County / Mississippi",
+    citationTags: ["Investigation", "Case Summary"],
+    relatedIds: ["bwc-timeline", "pcr-motion", "sdtix-complaint"],
+    keywords: ["investigation", "timeline", "evidence", "summary", "constitutional"],
+    jurisdiction: "Multi-jurisdictional",
     significance: "high",
-    summary: "Comprehensive packet of documents from the Galveston DWI case including petition to revoke probation, bench warrants, Governor Reeves' rendition request labeling defendant as fugitive, and booking records showing interstate coordination between Texas and Mississippi authorities."
+    summary: "Comprehensive investigation files documenting the case timeline, evidence collection, and analysis of constitutional violations across multiple jurisdictions."
   }
 ];
 
