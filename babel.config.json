@@ -1,0 +1,6 @@
+{
+  "presets": [
+    ["@babel/preset-typescript", { "allowDeclareFields": true, "allExtensions": true, "isTSX": true }],
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ]
+}
