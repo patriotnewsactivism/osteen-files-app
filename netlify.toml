@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist"         # â† not "build"
-  # base = "wtp-app"       # â† only if your app lives in a subfolder
+  publish = "dist"         # Ã¢â€ Â not "build"
+  # base = "wtp-app"       # Ã¢â€ Â only if your app lives in a subfolder
 t", ".next", etc., depending on framework
 
