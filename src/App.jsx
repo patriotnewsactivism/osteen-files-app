@@ -1,3 +1,4 @@
+// src/App.tsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SiteHeader from "./components/SiteHeader";
@@ -9,17 +10,18 @@ import BadActorsPage from "./pages/BadActors";
 export default function App() {
   return (
     <BrowserRouter>
-      <SiteHeader />
-      <Routes>
-        {/* Default route shows the evidence page */}
-        <Route path="/" element={<OsteenEvidencePage />} />
-        <Route path="/evidence" element={<OsteenEvidencePage />} />
-        {/* Music hub and album pages */}
-        <Route path="/music" element={<MusicHub />} />
-        <Route path="/album/bad-actors" element={<BadActorsPage />} />
-      </Routes>
-      {/* Bottom tab for mobile navigation */}
-      <BottomTab />
+      <div className="flex min-h-screen flex-col bg-gray-50">
+        <SiteHeader />
+
+        <Routes>
+          <Route path="/" element={<OsteenEvidencePage />} />
+          <Route path="/evidence" element={<OsteenEvidencePage />} />
+          <Route path="/music" element={<MusicHub />} />
+          <Route path="/album/bad-actors" element={<BadActorsPage />} />
+        </Routes>
+
+        <BottomTab />
+      </div>
     </BrowserRouter>
   );
 }
