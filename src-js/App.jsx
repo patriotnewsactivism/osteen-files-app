@@ -1,4 +1,4 @@
-// src/App.tsx
+// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SiteHeader from "./components/SiteHeader";
