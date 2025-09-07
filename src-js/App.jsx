@@ -1,7 +1,7 @@
 // src-js/App.jsx
 import { Routes, Route } from "react-router-dom";
-import SiteHeader from "./components/SiteHeader";
-import BottomTab from "./components/BottomTab";
+import SiteHeader from "./components/SiteHeader.js";
+import BottomTab from "./components/BottomTab.js";
 
 import Home from "./pages/Home";
 import Music from "./pages/Music.js";
