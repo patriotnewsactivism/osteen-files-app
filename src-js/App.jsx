@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/Home.jsx'
 
 function App() {
   return (
@@ -9,5 +9,5 @@ function App() {
     </Routes>
   )
 }
-
+xx
 export default App
