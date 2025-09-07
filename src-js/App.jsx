@@ -4,9 +4,9 @@ import SiteHeader from "./components/SiteHeader";
 import BottomTab from "./components/BottomTab";
 
 import Home from "./pages/Home";
-import Music from "./pages/Music";
-import BadActors from "./pages/BadActors";
-import Evidence from "./pages/Evidence";
+import Music from "./pages/Music.js";
+import BadActors from "./pages/BadActors.js";
+import Evidence from "./pages/Evidence.js";
 
 export default function App() {
   return (
