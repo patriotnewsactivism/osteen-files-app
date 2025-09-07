@@ -1,9 +1,11 @@
-// tailwind.config.cjs
-module.exports = {
+export default {
   content: [
-    './index.html',
-    './src-js/**/*.{js,jsx,ts,tsx}', // scan the compiled folder
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src-js/**/*.{js,ts,jsx,tsx}", // Include your src-js folder
   ],
-  theme: { extend: {} },
+  theme: {
+    extend: {},
+  },
   plugins: [],
-};
+}
