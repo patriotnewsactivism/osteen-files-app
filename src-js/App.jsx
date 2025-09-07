@@ -24,4 +24,30 @@ export default function App() {
       </div>
     </BrowserRouter>
   );
+  *** Begin Patch
+*** Update File: src-js/App.jsx
+@@
+-import { BrowserRouter, Routes, Route } from "react-router-dom";
++import { Routes, Route } from "react-router-dom";
+
+@@ export default function App() {
+-  return (
+-    <BrowserRouter>
+-      <div className="flex min-h-screen flex-col bg-gray-50">
+-        <SiteHeader />
+-        <Routes>
++  return (
++      <div className="flex min-h-screen flex-col bg-gray-50">
++        <SiteHeader />
++        <Routes>
+@@
+         </Routes>
+         <BottomTab />
+-      </div>
+-    </BrowserRouter>
+-  );
++      </div>
++  );
+*** End Patch
+
 }
