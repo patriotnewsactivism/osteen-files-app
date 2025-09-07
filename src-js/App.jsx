@@ -6,7 +6,7 @@ import BottomTab from "./components/BottomTab";
 import Home from "./pages/Home";
 import Music from "./pages/Music.js";
 import BadActors from "./pages/BadActors.js";
-import Evidence from "./pages/Evidence.js";
+import Evidence from "./pages/OsteenEvidence.js";
 
 export default function App() {
   return (
