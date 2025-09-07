@@ -1,53 +1,25 @@
-// src/App.jsx
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// src-js/App.jsx
+import { Routes, Route } from "react-router-dom";
 import SiteHeader from "./components/SiteHeader";
 import BottomTab from "./components/BottomTab";
-import OsteenEvidencePage from "./pages/OsteenEvidence";
-import MusicHub from "./pages/Music";
-import BadActorsPage from "./pages/BadActors";
+
+import Home from "./pages/Home";
+import Music from "./pages/Music";
+import BadActors from "./pages/BadActors";
+import Evidence from "./pages/Evidence";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <div className="flex min-h-screen flex-col bg-gray-50">
-        <SiteHeader />
-
-        <Routes>
-          <Route path="/" element={<OsteenEvidencePage />} />
-          <Route path="/evidence" element={<OsteenEvidencePage />} />
-          <Route path="/music" element={<MusicHub />} />
-          <Route path="/album/bad-actors" element={<BadActorsPage />} />
-        </Routes>
-
-        <BottomTab />
-      </div>
-    </BrowserRouter>
+    <div className="flex min-h-screen flex-col bg-gray-50">
+      <SiteHeader />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/music" element={<Music />} />
+        <Route path="/album/bad-actors" element={<BadActors />} />
+        <Route path="/evidence" element={<Evidence />} />
+        {/* add more routes here as needed */}
+      </Routes>
+      <BottomTab />
+    </div>
   );
-  *** Begin Patch
-*** Update File: src-js/App.jsx
-@@
--import { BrowserRouter, Routes, Route } from "react-router-dom";
-+import { Routes, Route } from "react-router-dom";
-
-@@ export default function App() {
--  return (
--    <BrowserRouter>
--      <div className="flex min-h-screen flex-col bg-gray-50">
--        <SiteHeader />
--        <Routes>
-+  return (
-+      <div className="flex min-h-screen flex-col bg-gray-50">
-+        <SiteHeader />
-+        <Routes>
-@@
-         </Routes>
-         <BottomTab />
--      </div>
--    </BrowserRouter>
--  );
-+      </div>
-+  );
-*** End Patch
-
 }
