@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import SiteHeader from "./components/SiteHeader.js";
 import BottomTab from "./components/BottomTab.js";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home.js";
 import Music from "./pages/Music.js";
 import BadActors from "./pages/BadActors.js";
 import Evidence from "./pages/OsteenEvidence.js";
