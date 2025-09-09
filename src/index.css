@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Design tokens (tweak freely) */
+:root {
+  --brand: 15 23 42;         /* slate-900 */
+  --ink: 15 23 42;
+  --muted: 100 116 139;      /* slate-500 */
+  --ring: 99 102 241;        /* indigo-500 */
+}
+
+@layer base {
+  html, body {
+    @apply bg-slate-50 text-slate-900;
+  }
+}
+
+/* Reusable UI primitives */
+@layer components {
+  .container {
+    @apply mx-auto max-w-6xl px-4;
+  }
+
+  .card {
+    @apply rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm font-medium
+           hover:bg-slate-50 active:bg-slate-100 transition-colors;
+  }
+  .btn-primary {
+    @apply bg-slate-900 text-white border-slate-900 hover:bg-slate-800 active:bg-slate-900;
+  }
+  .btn-quiet {
+    @apply border-slate-300 text-slate-700;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs bg-slate-50;
+  }
+
+  .muted {
+    @apply text-sm text-slate-600;
+  }
+
+  .h1 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+  .h2 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  .divider {
+    @apply border-t border-slate-200 my-6;
+  }
+
+  /* Accessible focus */
+  :is(a, button, .btn):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--ring) / 0.35);
+    border-color: rgb(var(--ring));
+  }
+}
