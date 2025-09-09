@@ -1,0 +1,250 @@
+<!--
+File: index.html
+Purpose: Attractive, zero-build site. Pico.css for styling, BandLab embed for audio.
+Notes:
+- Replace BANDLAB_COLLECTION_ID with your album/collection UUID from BandLab Share → Embed.
+- To embed single tracks, add <div data-bandlab-track="TRACK_UUID"></div>.
+- Dropbox links removed.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Osteen Evidence Hub</title>
+
+  <!-- Classless, attractive defaults -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+  <!-- Theme tweaks -->
+  <link rel="stylesheet" href="/assets/theme.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><strong>Osteen Evidence Hub</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#evidence">Evidence</a></li>
+        <li><a href="#audio">Album</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h1>Receipts, organized.</h1>
+      <p class="muted">Source docs, filings, and transcripts — cleanly indexed with a built‑in player for the <em>Bad Actors</em> album.</p>
+    </section>
+  </header>
+
+  <main>
+    <section id="status" aria-label="Status">
+      <article>
+        <header>
+          <h2>Status</h2>
+        </header>
+        <p>Build healthy. Data modules load on demand.</p>
+        <footer>
+          <small>Last updated <time id="updated"></time></small>
+        </footer>
+      </article>
+    </section>
+
+    <section id="evidence" aria-label="Evidence" class="grid">
+      <!-- Example cards. Replace/duplicate with real entries or render from JS if you prefer. -->
+      <article>
+        <header>
+          <h3>Motion for Post‑Conviction Relief (Mississippi)</h3>
+          <small>Nov 26, 2024 · Court Filing</small>
+        </header>
+        <ul>
+          <li>Argues any Texas DUI would be a misdemeanor and thus only a “technical violation”.</li>
+          <li>Notes second technical revocation capped at 120 days; requests vacatur and re‑sentencing.</li>
+          <li>Cites <em>Knight v. State</em> and multiple circuit precedents.</li>
+        </ul>
+        <footer>
+          <a href="/docs/per-motion.pdf" role="button">Preview PDF</a>
+        </footer>
+      </article>
+
+      <article>
+        <header>
+          <h3>Civil Rights Complaint — Reardon v. Osteen et al. (TXSD)</h3>
+          <small>May 27, 2025 · Court Filing</small>
+        </header>
+        <ul>
+          <li>Alleges perjury in a blood‑draw warrant affidavit (Franks v. Delaware, Wong Sun).</li>
+          <li>Asserts coordinated interstate scheme; First/Fourth/Fourteenth violations.</li>
+          <li>Names Osteen, Doraty, McDougle, GPD, UTMB, and Mississippi officials.</li>
+        </ul>
+        <footer>
+          <a href="/docs/civil-complaint.pdf" role="button">Preview PDF</a>
+        </footer>
+      </article>
+
+      <article>
+        <header>
+          <h3>Transcript — Revocation Hearing (Lafayette Co., MS)</h3>
+          <small>Jul 18, 2024 · Transcript</small>
+        </header>
+        <ul>
+          <li>Court describes defendant as on unsupervised probation; overrules 47‑7‑37 objection.</li>
+          <li>Defense notes inconsistencies in petition regarding post‑release supervision.</li>
+        </ul>
+        <footer>
+          <a href="/docs/revocation-transcript.pdf" role="button">Preview PDF</a>
+        </footer>
+      </article>
+    </section>
+
+    <section id="audio" aria-label="Album">
+      <article>
+        <header>
+          <h2>Bad Actors — Album</h2>
+          <small>Streamed via BandLab embed.</small>
+        </header>
+        <!--
+          Replace BANDLAB_COLLECTION_ID with your real Collection/Album UUID from BandLab → Share → Embed.
+          Example track/player formats are documented here:
+          - Track:      https://www.bandlab.com/embed/?id=TRACK_UUID
+          - Collection: https://www.bandlab.com/embed/collection/?id=COLLECTION_UUID
+        -->
+        <div class="player">
+          <iframe
+            title="BandLab Album Player"
+            loading="lazy"
+            width="100%"
+            height="472"
+            frameborder="0"
+            allowfullscreen
+            src="https://www.bandlab.com/embed/collection/?id=BANDLAB_COLLECTION_ID&blur=false">
+          </iframe>
+        </div>
+
+        <details>
+          <summary>Prefer individual tracks?</summary>
+          <div class="tracks" id="tracks"></div>
+        </details>
+      </article>
+    </section>
+
+    <section id="about">
+      <article>
+        <header><h2>About</h2></header>
+        <p>This is a static site. No tracking. Media is embedded directly from BandLab. Any prior Dropbox audio references were removed.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Osteen Files</small>
+  </footer>
+
+  <script type="module" src="/assets/bandlab.js"></script>
+  <script>
+    // tiny helpers
+    document.getElementById('updated').textContent = new Date().toLocaleString();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+<!--
+File: osteen-files.html
+Purpose: Alternate landing page with the same styles and album embed. Duplicate content here if you want a separate route.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Osteen Files – Evidence</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+  <link rel="stylesheet" href="/assets/theme.css">
+</head>
+<body>
+  <header>
+    <h1>Osteen Files — Evidence</h1>
+    <p class="muted">Curated filings and transcripts with embedded BandLab audio. No Dropbox links.</p>
+  </header>
+  <main>
+    <section>
+      <article>
+        <header><h2>Album Player</h2></header>
+        <div class="player">
+          <iframe title="BandLab Album Player" loading="lazy" width="100%" height="472" frameborder="0" allowfullscreen src="https://www.bandlab.com/embed/collection/?id=BANDLAB_COLLECTION_ID&blur=false"></iframe>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer><small>© <span id="y2"></span> Osteen Files</small></footer>
+  <script>document.getElementById('y2').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+<!--
+File: assets/theme.css
+Purpose: Add a distinct, modern look on top of Pico (no classes required).
+-->
+:root {
+  --brand: hsl(268 84% 58%);
+  --brand-ink: white;
+  --surface: hsl(258 25% 97%);
+  --ink: hsl(248 19% 18%);
+}
+
+html { scroll-behavior: smooth; }
+body { color: var(--ink); background: var(--surface); }
+
+header .hero {
+  padding: 3rem 0 2rem;
+  background: radial-gradient(1200px 400px at 10% -10%, hsl(270 90% 90%), transparent),
+              radial-gradient(800px 320px at 90% -20%, hsl(200 85% 92%), transparent),
+              linear-gradient(180deg, #fff, transparent 60%);
+  border-bottom: 1px solid hsl(260 20% 90%);
+}
+
+nav ul:first-child strong { color: var(--brand); }
+
+article { border-radius: 16px; box-shadow: 0 8px 24px rgba(40, 20, 70, 0.05); }
+article > header h2, article > header h3 { margin-bottom: .25rem; }
+
+.muted { opacity: .75; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.player iframe { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+
+footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid hsl(260 20% 88%); }
+
+/* Small button accent */
+a[role="button"] { background: var(--brand); color: var(--brand-ink); border-color: color-mix(in oklab, var(--brand), black 10%); }
+a[role="button"]:hover { filter: brightness(1.05); }
+
+
+/*
+File: assets/bandlab.js
+Purpose: Optional helper to render individual track embeds from data attributes.
+Usage: <div data-bandlab-track="TRACK_UUID"></div>
+*/
+(function () {
+  const nodes = document.querySelectorAll('[data-bandlab-track]');
+  nodes.forEach((el) => {
+    const id = el.getAttribute('data-bandlab-track');
+    if (!id) return;
+    const iframe = document.createElement('iframe');
+    iframe.title = 'BandLab Track Player';
+    iframe.loading = 'lazy';
+    iframe.width = '100%';
+    iframe.height = '202';
+    iframe.frameBorder = '0';
+    iframe.allowFullscreen = true;
+    /* why: BandLab official pattern from public embeds */
+    iframe.src = `https://www.bandlab.com/embed/?id=${encodeURIComponent(id)}&blur=false`;
+    iframe.style.borderRadius = '12px';
+    el.replaceWith(iframe);
+  });
+})();
