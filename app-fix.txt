@@ -1,0 +1,2 @@
+          <Route path="/music" element={<Music />} />
+          <Route path="/album/bad-actors" element={<BadActors />} />
